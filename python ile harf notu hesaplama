@@ -1,0 +1,66 @@
+#dosya yazma kipi olarak "a" kullanılmıştır. dosya oluşturmaz, var olan dosyanın üzerine yazar .#
+#kalanlar.txt ve gecenler.txt dosyaları oluşturun var olan dizinde.#
+print("""
+Katsayıları Vize : 0.4  Final : 0.6 Biçiminde Girin
+***tüm notlar girilince "Öğrenci Adı:" bitir "hesapla" yazarak 
+hesaplamayı başlatabilirsiniz.***
+
+""")
+vize_katsayı = float(input("Vize Katsayı:"))
+final_katsayı = float(input("Final Katsayı:"))
+
+while True:
+    isim = input("Öğrenci Adı: ")
+    if isim == "bitir":
+        print("Hesaplamalar Bitti ...")
+        break
+
+    vize = int(input("Vize: "))
+    final = int(input("Final:"))
+
+    i = (vize * vize_katsayı) + (final * final_katsayı)
+
+    if 90 <= i <= 100:
+        with open("gecenler.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: AA\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 80 <= i <= 84:
+        with open("gecenler.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: BB\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 75 <= i <= 79:
+        with open("gecenler.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: CB\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 70 <= i <= 74:
+        with open("gecenler.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: CC\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 65 <= i <= 69:
+        with open("gecenler.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: DC\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 60 <= i <= 64:
+        with open("gecenler.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: DD\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 50 <= i <= 59:
+        with open("kalanlar.txt","a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: FD\n".format(isim, vize, final, i)
+            file.write(yazdır)
+    elif 49 >= i:
+        with open("kalanlar.txt", "a", encoding="utf-8")as file:
+            yazdır = "Öğrenci Adı :{}  Vize:{} Final:{} Ortalama:{} HarNotu: FF\n".format(isim, vize, final, i)
+            file.write(yazdır)
+
+    if 0<vize>100 or 0<final>100:
+        print("Notu Kontrol Edin Lütfen; Vize:{} Final:{}".format(vize,final))
+
+
+
+
+
+
+
+
+
