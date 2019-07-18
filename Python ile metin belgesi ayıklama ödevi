@@ -1,0 +1,20 @@
+#bu program isimler.txt dosyasındaki "Fernando Muslera,gs" bu biçimde alt alta yazılmış#
+#gs ve fb takım üyelerinin gs'lileri gs.txt , fb'lileri fb.txt, metin dosyasına kayıteder.#
+
+with open("isimler.txt","r",encoding="utf-8")as file:
+    for x in file:
+        bol = x.split(",")
+        y = bol[0]
+        for i in bol:
+            if i == "gs\n":
+                with open("gs.txt","a",encoding="utf-8")as file:
+                    file.write(y)
+                    file.write("\n")
+
+            elif i == "fb\n":
+                with open("fb.txt","a",encoding="utf-8")as file:
+                    file.write(y)
+                    file.write("\n")
+
+
+
