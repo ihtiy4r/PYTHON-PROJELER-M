@@ -1,0 +1,16 @@
+import random
+karakter = int(input("Karakter Sayısı: "))
+tekrar = 0
+sifre = []
+karakterler =["A", "B", "C", "Ç", "D", "E", "F", "G", "Ğ", "H", "I", "İ", "J", "K", "L", "M", "N", "O", "Ö", "P", "R", "S", "Ş", "T", "U", "Ü", "V", "Y", "Z","a", "b", "c", "ç", "d","e", "f", "g", "ğ", "h", "ı", "i", "j", "k", "l", "m", "n", "o", "ö", "p", "r", "s", "ş", "t", "u", "ü", "v", "y", "z","1","2","3","4","5","6","7","8","9","!",'"',"?","$", "?", "%", "^", "&", "*", "(",")", "_", "-", "+", "=", "{", "[", "}", "]", ":", ";", "@", "'", "~", "#", "|","<", "," ">", ".", "?", "/"]
+while 1:
+    if tekrar == karakter :
+        print("Şifre:",end="")
+        for i in range(0,tekrar):
+            print(sifre[i],end="")
+        break
+    else:
+        x = random.choice(karakterler)
+        tekrar +=1
+        sifre.append(x)
+
